@@ -16,14 +16,14 @@ public class LoggerAspect {
     private Logger logger = LogManager.getLogger(LoggerAspect.class);
 
     /*
-    @Before("execution(* com.aaron.controller.*.*(..))")
+    @Before("execution(* com.aaron.web.*.*(..))")
     public void beforeGetName(JoinPoint joinPoint) {
         logger.info("before注入");
         logger.info(joinPoint.getTarget().getClass());
         logger.info(joinPoint.getSignature().getName());
     }
 
-    @After("execution(* com.aaron.controller.*.*(..))")
+    @After("execution(* com.aaron.web.*.*(..))")
     public void afterGetName(JoinPoint joinPoint) {
         logger.info("after注入");
         logger.info(joinPoint.getTarget().getClass());
@@ -31,7 +31,7 @@ public class LoggerAspect {
     }
 
 
-    @Around("execution(* com.aaron.controller.*.*(..))")
+    @Around("execution(* com.aaron.web.*.*(..))")
     public Object arrounGetName(ProceedingJoinPoint pjp) throws Throwable {
         logger.info(pjp.getTarget().getClass());
         logger.info(pjp.getSignature().getName());

@@ -1,4 +1,4 @@
-package com.aaron.controller;
+package com.aaron.web;
 
 import com.aaron.service.UserService;
 import com.alibaba.fastjson.JSONObject;
