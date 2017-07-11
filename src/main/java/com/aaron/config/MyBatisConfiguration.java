@@ -48,21 +48,6 @@ public class MyBatisConfiguration {
     @Value("${spring.datasource.filters}")
     private String filters;
 
-    @Value("${spring.hibernate.dialect}")
-    private String dialect;
-    @Value("${spring.hibernate.show_sql}")
-    private String showSql;
-    @Value("${spring.hibernate.autoReconnect}")
-    private String autoReconnect;
-    @Value("${spring.hibernate.transaction.auto_close_session}")
-    private String transactionAutoClostSession;
-    @Value("${spring.hibernate.connection.autocommit}")
-    private String connectionAutoCommit;
-    @Value("${spring.statement_cache.size}")
-    private String statementCacheSize;
-    @Value("${spring.hibernate.packagesToScan}")
-    private String packagesToScan;
-
     @Bean
     @Qualifier(value = "mybatisDataSource")
     public DataSource mybatisDataSource() {
