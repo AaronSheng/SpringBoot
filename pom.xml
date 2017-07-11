@@ -79,6 +79,13 @@
             <version>4.3.6.Final</version>
         </dependency>
 
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
         <!-- druid + mysql -->
         <dependency>
             <groupId>com.alibaba</groupId>
