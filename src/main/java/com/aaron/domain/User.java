@@ -1,4 +1,4 @@
-package com.aaron.entity;
+package com.aaron.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;

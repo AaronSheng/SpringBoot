@@ -1,9 +1,7 @@
 package com.aaron.service;
 
 import com.aaron.dao.CommunityUserDao;
-import com.aaron.dao.UserDao;
-import com.aaron.entity.CommunityUser;
-import com.aaron.entity.User;
+import com.aaron.domain.CommunityUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

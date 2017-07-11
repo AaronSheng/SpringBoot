@@ -1,6 +1,6 @@
 package com.aaron.dao;
 
-import com.aaron.entity.User;
+import com.aaron.domain.User;
 import com.aaron.dao.base.GenericDao;
 
 /**
@@ -10,4 +10,6 @@ public interface UserDao extends GenericDao<User, Long> {
     User get(Long id);
 
     void add(User user);
+
+    void update(User user);
 }

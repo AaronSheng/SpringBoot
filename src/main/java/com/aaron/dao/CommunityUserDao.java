@@ -1,7 +1,7 @@
 package com.aaron.dao;
 
 import com.aaron.dao.base.GenericDao;
-import com.aaron.entity.CommunityUser;
+import com.aaron.domain.CommunityUser;
 
 /**
  * Created by Aaron Sheng on 9/16/16.

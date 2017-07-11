@@ -1,4 +1,4 @@
-package com.aaron.entity;
+package com.aaron.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

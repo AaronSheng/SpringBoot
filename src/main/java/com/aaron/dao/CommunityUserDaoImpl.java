@@ -1,8 +1,7 @@
 package com.aaron.dao;
 
 import com.aaron.dao.base.GenericDaoImpl;
-import com.aaron.entity.CommunityUser;
-import com.aaron.entity.User;
+import com.aaron.domain.CommunityUser;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 

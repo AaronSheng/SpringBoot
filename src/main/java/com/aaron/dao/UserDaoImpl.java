@@ -1,7 +1,7 @@
 package com.aaron.dao;
 
 import com.aaron.dao.base.GenericDaoImpl;
-import com.aaron.entity.User;
+import com.aaron.domain.User;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +21,11 @@ public class UserDaoImpl extends GenericDaoImpl<User, Long> implements UserDao {
         return findByPK(id);
     }
 
-    public  void add(User user) {
+    public void add(User user) {
         save(user);
+    }
+
+    public void update(User user) {
+        super.update(user);
     }
 }

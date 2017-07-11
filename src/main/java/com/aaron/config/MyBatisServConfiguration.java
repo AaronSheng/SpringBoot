@@ -3,20 +3,27 @@ package com.aaron.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * Created by aaron on 7/11/17.
  */
 @Configuration
-public class MyBatisConfiguration {
+@MapperScan(basePackages = "com.aaron.mapper_serv", sqlSessionFactoryRef = "mybatisServerSesstionFactory")
+public class MyBatisServConfiguration {
     @Value("${spring.datasource.serverurl}")
     private String serverurl;
+    @Value("${spring.datasource.communityurl}")
+    private String communityurl;
     @Value("${spring.datasource.username}")
     private String username;
     @Value("${spring.datasource.password}")
@@ -49,8 +56,8 @@ public class MyBatisConfiguration {
     private String filters;
 
     @Bean
-    @Qualifier(value = "mybatisDataSource")
-    public DataSource mybatisDataSource() {
+    @Qualifier(value = "mybatisServerDataSource")
+    public DataSource mybatisServerDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUrl(serverurl);
         druidDataSource.setUsername(username);
@@ -72,10 +79,12 @@ public class MyBatisConfiguration {
     }
 
     @Bean
-    @Qualifier(value = "mybatisSesstionFactory")
-    public SqlSessionFactory mybatisSesstionFactory(@Qualifier("mybatisDataSource")DataSource dataSource) throws Exception {
+    @Qualifier(value = "mybatisServerSesstionFactory")
+    @Primary
+    public SqlSessionFactory mybatisServerSesstionFactory(@Qualifier("mybatisServerDataSource")DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
+        Properties properties = new Properties();
         return sqlSessionFactoryBean.getObject();
     }
 }

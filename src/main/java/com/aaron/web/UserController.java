@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/name", method = RequestMethod.GET)
+    @RequestMapping(value = "/getName", method = RequestMethod.GET)
     public JSONObject getName(@RequestParam("id")long id) {
         String name = userService.getName(id);
         JSONObject jsonObject = new JSONObject();
@@ -24,7 +24,7 @@ public class UserController {
         return jsonObject;
     }
 
-    @RequestMapping(value = "/name", method = RequestMethod.POST)
+    @RequestMapping(value = "/setName", method = RequestMethod.GET)
     public JSONObject setName(@RequestParam("id")long id, @RequestParam("name")String name) {
         userService.setName(id, name);
         JSONObject jsonObject = new JSONObject();

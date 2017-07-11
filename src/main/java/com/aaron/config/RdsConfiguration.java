@@ -127,7 +127,7 @@ public class RdsConfiguration {
         properties.setProperty("hibernate.transaction.connection.autocommit", connectionAutoCommit);
         properties.setProperty("statement_cache.size", statementCacheSize);
         localSessionFactoryBean.setHibernateProperties(properties);
-        localSessionFactoryBean.setPackagesToScan("com.aaron.entity");
+        localSessionFactoryBean.setPackagesToScan("com.aaron.domain");
         return localSessionFactoryBean;
     }
 

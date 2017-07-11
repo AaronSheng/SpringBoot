@@ -1,6 +1,6 @@
-package com.aaron.dao;
+package com.aaron.mapper_serv;
 
-import com.aaron.entity.User;
+import com.aaron.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
