@@ -35,6 +35,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -115,6 +116,10 @@
             </plugin>
         </plugins>
     </build>-->
+
+    <build>
+        <finalName>web</finalName>
+    </build>
 
     <profiles>
         <profile>
