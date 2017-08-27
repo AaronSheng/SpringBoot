@@ -1,4 +1,4 @@
-package com.aaron.mapper_comm;
+package com.aaron.mapper.comm;
 
 import com.aaron.domain.CommunityUser;
 import org.apache.ibatis.annotations.Mapper;

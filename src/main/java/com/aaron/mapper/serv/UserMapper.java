@@ -1,4 +1,4 @@
-package com.aaron.mapper_serv;
+package com.aaron.mapper.serv;
 
 import com.aaron.domain.User;
 import org.apache.ibatis.annotations.Mapper;
