@@ -19,7 +19,7 @@ import java.util.Properties;
  * Created by Aaron Sheng on 9/12/16.
  */
 @Configuration
-public class RdsConfiguration {
+public class HibernateConfiguration {
     @Value("${spring.datasource.serverurl}")
     private String serverurl;
     @Value("${spring.datasource.communityurl}")

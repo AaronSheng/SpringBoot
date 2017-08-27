@@ -15,7 +15,7 @@ import javax.sql.DataSource;
  * Created by aaron on 7/11/17.
  */
 @Configuration
-@MapperScan(basePackages = "com.aaron.mapper_comm", sqlSessionFactoryRef = "mybatisCommunitySesstionFactory")
+@MapperScan(basePackages = "com.aaron.mapper.comm", sqlSessionFactoryRef = "mybatisCommunitySesstionFactory")
 public class MyBatisCommConfiguration {
     @Value("${spring.datasource.serverurl}")
     private String serverurl;

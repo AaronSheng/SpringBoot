@@ -18,7 +18,7 @@ import java.util.Properties;
  * Created by aaron on 7/11/17.
  */
 @Configuration
-@MapperScan(basePackages = "com.aaron.mapper_serv", sqlSessionFactoryRef = "mybatisServerSesstionFactory")
+@MapperScan(basePackages = "com.aaron.mapper.serv", sqlSessionFactoryRef = "mybatisServerSesstionFactory")
 public class MyBatisServConfiguration {
     @Value("${spring.datasource.serverurl}")
     private String serverurl;
