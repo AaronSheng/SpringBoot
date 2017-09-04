@@ -1,6 +1,5 @@
 package com.aaron.service;
 
-import com.aaron.dao.UserDao;
 import com.aaron.mapper.serv.UserMapper;
 import com.aaron.mapper.comm.CommunityUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by Aaron Sheng on 9/9/16.
  */
 @Service
-@Transactional(value="serverTransactionManager")
+//@Transactional(value="serverTransactionManager")
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
