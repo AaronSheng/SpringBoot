@@ -134,6 +134,7 @@ public class HibernateConfiguration {
 
     @Bean(name = "serverTransactionManager")
     @Qualifier(value = "serverTransactionManager")
+    @Primary
     public HibernateTransactionManager serverTransactionManager(@Qualifier("serverSessionFactory") SessionFactory sessionFactory) {
         return hibernateTransactionManager(sessionFactory);
     }
