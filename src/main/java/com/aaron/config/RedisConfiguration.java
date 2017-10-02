@@ -1,6 +1,8 @@
 package com.aaron.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -12,40 +14,25 @@ import redis.clients.jedis.JedisPoolConfig;
  * Created by Aaron Sheng on 9/18/16.
  */
 @Configuration
+@EnableConfigurationProperties(RedisProperties.class)
 public class RedisConfiguration {
-    @Value("${spring.redis.host}")
-    private String host;
-    @Value("${spring.redis.password}")
-    private String password;
-    @Value("${spring.redis.port}")
-    private int port;
-    @Value("${spring.redis.timeout}")
-    private int timeout;
-    @Value("${spring.redis.pool.maxTotal}")
-    private int maxTotal;
-    @Value("${spring.redis.pool.maxIdle}")
-    private int maxIdle;
-    @Value("${spring.redis.pool.minIdle}")
-    private int minIdle;
-    @Value("${spring.redis.pool.maxWaitMillis}")
-    private long maxWaitMillis;
-    @Value("${spring.redis.pool.testOnBorrow}")
-    private boolean testOnBorrow;
+    @Autowired
+    private RedisProperties redisProperties;
 
     @Bean
     public JedisConnectionFactory redisConnectionFactory() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxTotal(maxTotal);
-        jedisPoolConfig.setMaxIdle(maxIdle);
-        jedisPoolConfig.setMinIdle(minIdle);
-        jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
-        jedisPoolConfig.setTestOnBorrow(testOnBorrow);
+        jedisPoolConfig.setMaxTotal(redisProperties.getMaxTotal());
+        jedisPoolConfig.setMaxIdle(redisProperties.getMaxIdle());
+        jedisPoolConfig.setMinIdle(redisProperties.getMinIdle());
+        jedisPoolConfig.setMaxWaitMillis(redisProperties.getMaxWaitMillis());
+        jedisPoolConfig.setTestOnBorrow(redisProperties.getTestOnBorrow());
 
         JedisConnectionFactory factory = new JedisConnectionFactory();
-        factory.setHostName(host);
-        factory.setPort(port);
-        factory.setPassword(password);
-        factory.setTimeout(timeout);
+        factory.setHostName(redisProperties.getHost());
+        factory.setPort(redisProperties.getPort());
+        factory.setPassword(redisProperties.getPassword());
+        factory.setTimeout(redisProperties.getTimeout());
         factory.setPoolConfig(jedisPoolConfig);
         return factory;
     }
